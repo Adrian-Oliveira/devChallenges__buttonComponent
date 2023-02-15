@@ -1,21 +1,59 @@
 .buttonComponent{
 
     font-family: 'Noto Sans JP';
-    font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
     text-align: center;
+    cursor: pointer;
 
-    padding: 0.8rem 1.6rem;
+    &:disabled{
+        background: #E0E0E0;
+        border-radius: 6px;
+    }
+    
+    &--default{
 
-    color: #3F3F3F;
+        width: 8.1rem;
+        height: 3.6rem;
 
-    background: #E0E0E0;
-    box-shadow: 0rem 0.2rem 0.3rem rgba(51, 51, 51, 0.2);
-    border-radius: 0.6rem;
+        padding: 0.8rem 1.6rem;
+        color: #3F3F3F;
+        background: #E0E0E0;
+        box-shadow: 0rem 0.2rem 0.3rem rgba(51, 51, 51, 0.2);
+        border-radius: 0.6rem;
+        &:hover,&:focus{
+            background: #AEAEAE;
+        }
+        
+    }
 
-    &:hover,&:focus{
-        background: #AEAEAE;
+    &--outline{
+        padding: 0.8rem 2rem;
+
+        width: 8.8rem;
+        height: 3.6rem;
+        
+        color: #3D5AFE;
+        border: 1px solid #3D5AFE;
+        border-radius: 6px;
+        &:hover,&:focus{
+            background: rgba(41, 98, 255, 0.1);
+            border: 1px solid #3D5AFE;
+            border-radius: 6px;
+        }
+    }    
+
+    &--text{
+        padding: 0.8rem 2rem;
+
+        width: 8.8rem;
+        height: 3.6rem;
+        
+        background: #FAFBFD;
+        border-radius: 6px;
+        &:hover,&:focus{
+            background: rgba(41, 98, 255, 0.1);
+        }
     }
 }
