@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { forwardRef, LegacyRef, MouseEventHandler } from 'react';
 import PropTypes from 'prop-types';
 
 import './button.scss';
@@ -13,13 +13,16 @@ interface Props {
     startIcon?:string,
     endIcon?:string,
     size?:"sm"|"md"|"lg",
-    color?: "default"|"primary"|"secondary"|"danger",
+    color?: "default"|"primary"|"secondary"|"danger"|void,
 }
 
+type Ref = HTMLButtonElement;
 
-const Button = ({label ="Default", className="", onClick = ()=>{}, 
-                variant ="default",disableShadow = false, disabled = false,
-                startIcon= '',endIcon= '',size = "md", color="default"}:Props)=>{
+const Button = forwardRef<Ref,Props >(({label ="Default", className="", onClick = ()=>{}, 
+                                        variant ="default",disableShadow = false, disabled = false,
+                                        startIcon= '',endIcon= '',size = "md", color},
+                                        ref)=>{
+
     return(
         <button 
             disabled={disabled}
@@ -28,7 +31,8 @@ const Button = ({label ="Default", className="", onClick = ()=>{},
                         buttonComponent--size-${size}
                         buttonComponent--color-${color}`
                       } 
-            onClick={onClick}>
+            onClick={onClick}
+            ref={ref}>
             
             {startIcon?<i className="material-icons buttonComponent__startIcon">{startIcon}</i>:''}
             <p>{label}</p>
@@ -37,7 +41,7 @@ const Button = ({label ="Default", className="", onClick = ()=>{},
         </button>
     );
 }
-
+)
 /* Button.propTypes = {
     label: PropTypes.string.isRequired,
     className: PropTypes.string,

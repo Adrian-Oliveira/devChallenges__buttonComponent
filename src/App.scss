@@ -7,4 +7,23 @@
 
 .App{
   padding: 10rem 20rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
 }
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+
+  .element>p{
+
+    font: normal 400 1.4rem/1.2rem 'Ubuntu Mono';
+
+    color: white
+  }
+}
+
