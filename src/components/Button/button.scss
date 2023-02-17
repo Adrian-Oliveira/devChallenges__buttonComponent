@@ -59,6 +59,10 @@
         &:disabled{
             color: #9E9E9E;
             cursor:default;
+
+            &:hover,&:focus{
+                background: none;
+            }
         }
     }
 
